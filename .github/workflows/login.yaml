@@ -8,6 +8,9 @@ jobs:
   login_job:
     runs-on: ubuntu-latest
     name: Run Azure Login with OpenID Connect
+    permissions:
+      id-token: write
+      contents: read
     steps:
       # To use this repository's private action,
       # you must check out the repository
