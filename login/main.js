@@ -108,7 +108,16 @@ function main() {
                     servicePrincipalKey = null;
                     tenantId = core.getInput('tenant-id', { required: false });
                     subscriptionId = core.getInput('subscription-id', { required: false });
-                    resourceManagerEndpointUrl = "https://management.usgovcloudapi.net/";
+                    resourceManagerEndpointUrl = "https://management.azure.com/";
+                    // var resourceManagerEndpointUrl = "https://management.usgovcloudapi.net/";
+                    switch (environment) {
+                        case 'azureusgovernment':
+                            resourceManagerEndpointUrl = "https://management.usgovcloudapi.net/";
+                            break;
+                        case 'azurechinacloud':
+                            resourceManagerEndpointUrl = "https://management.chinacloudapi.cn/";
+                            break;
+                    }
                     enableOIDC = true;
                     federatedToken = null;
                     // If any of the individual credentials (clent_id, tenat_id, subscription_id) is present.
@@ -152,6 +161,8 @@ function main() {
                 case 4:
                     federatedToken = _b.sent();
                     if (!!!federatedToken) return [3 /*break*/, 6];
+                    if (environment != "azurecloud" || "azureusgovernment")
+                        throw new Error("Your current environment - \"".concat(environment, "\" is not supported for OIDC login."));
                     return [4 /*yield*/, jwtParser(federatedToken)];
                 case 5:
                     _a = _b.sent(), issuer = _a[0], subjectClaim = _a[1];

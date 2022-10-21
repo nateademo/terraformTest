@@ -23,5 +23,8 @@
     "@actions/github": "^5.1.1",
     "@actions/io": "^1.1.2",
     "actions-secret-parser": "^1.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.3"
   }
 }
