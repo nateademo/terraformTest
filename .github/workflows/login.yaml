@@ -23,7 +23,6 @@ jobs:
             tenant-id: ${{ secrets.AZURE_TENANT_ID }}
             subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
             environment: 'AzureUSGovernment'
-            # enable-AzPSSession: true #Currently this causes an error
 
       - name: 'Run Azure CLI commands'
         run: |
