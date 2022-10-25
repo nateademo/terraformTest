@@ -71,7 +71,7 @@ async function main() {
         var tenantId = core.getInput('tenant-id', { required: false });
         var subscriptionId = core.getInput('subscription-id', { required: false });
         var resourceManagerEndpointUrl = "https://management.azure.com/";
-        // var resourceManagerEndpointUrl = "https://management.usgovcloudapi.net/";
+
         switch(environment){
             case 'azureusgovernment':
                 resourceManagerEndpointUrl = "https://management.usgovcloudapi.net/";
