@@ -25,7 +25,7 @@ jobs:
             client-id: ${{ secrets.AZURE_CLIENT_ID_COM }}
             tenant-id: ${{ secrets.AZURE_TENANT_ID_COM }}
             subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID_COM }}
-            environment: 'Azure'
+            environment: 'AzureGlobalCloud'
 
       - name: 'Run Azure CLI commands'
         run: |
