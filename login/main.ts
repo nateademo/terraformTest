@@ -130,7 +130,7 @@ async function main() {
                 let audience = core.getInput('audience', { required: false });
                 federatedToken = await core.getIDToken(audience);
                 if (!!federatedToken) {
-                    if (environment != "azurecloud" || "azureusgovernment")
+                    if (environment != "azurecloud" || "azureusgovernment" || "azurechinacloud")
                         throw new Error(`Your current environment - "${environment}" is not supported for OIDC login.`);
                     let [issuer, subjectClaim] = await jwtParser(federatedToken);
                     console.log("Federated token details: \n issuer - " + issuer + " \n subject claim - " + subjectClaim);

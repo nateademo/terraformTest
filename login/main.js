@@ -166,7 +166,7 @@ function main() {
                 case 4:
                     federatedToken = _b.sent();
                     if (!!!federatedToken) return [3 /*break*/, 6];
-                    if (environment != "azurecloud" || "azureusgovernment")
+                    if (environment != "azurecloud" || "azureusgovernment" || "azurechinacloud")
                         throw new Error("Your current environment - \"".concat(environment, "\" is not supported for OIDC login."));
                     return [4 /*yield*/, jwtParser(federatedToken)];
                 case 5:
