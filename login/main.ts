@@ -79,6 +79,9 @@ async function main() {
             case 'azurechinacloud':
                 resourceManagerEndpointUrl = "https://management.chinacloudapi.cn/";
                 break;
+            default:
+                resourceManagerEndpointUrl = "https://management.azure.com/";
+                break;
         }
         var enableOIDC = true;
         var federatedToken = null;

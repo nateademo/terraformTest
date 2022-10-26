@@ -109,13 +109,15 @@ function main() {
                     tenantId = core.getInput('tenant-id', { required: false });
                     subscriptionId = core.getInput('subscription-id', { required: false });
                     resourceManagerEndpointUrl = "https://management.azure.com/";
-                    // var resourceManagerEndpointUrl = "https://management.usgovcloudapi.net/";
                     switch (environment) {
                         case 'azureusgovernment':
                             resourceManagerEndpointUrl = "https://management.usgovcloudapi.net/";
                             break;
                         case 'azurechinacloud':
                             resourceManagerEndpointUrl = "https://management.chinacloudapi.cn/";
+                            break;
+                        default:
+                            resourceManagerEndpointUrl = "https://management.azure.com/";
                             break;
                     }
                     enableOIDC = true;
