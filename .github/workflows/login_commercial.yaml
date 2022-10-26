@@ -1,0 +1,30 @@
+on: [push]
+
+permissions:
+      id-token: write
+      contents: read
+
+jobs:
+  login_job:
+    runs-on: ubuntu-latest
+    name: Run Azure Login with OpenID Connect
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: 'Az CLI login'
+        uses: ./login
+        with:
+            client-id: ${{ secrets.AZURE_CLIENT_ID_COM }}
+            tenant-id: ${{ secrets.AZURE_TENANT_ID_COM }}
+            subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID_COM }}
+
+      - name: 'Run Azure CLI commands'
+        run: |
+            az account show
+            az group list
+            pwd
