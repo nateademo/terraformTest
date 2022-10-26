@@ -74,7 +74,7 @@ async function main() {
 
         switch(environment){
             case 'azurecloud':
-                resourceManagerEndpointUrl = "https://management.usgovcloudapi.net/";
+                resourceManagerEndpointUrl = "https://management.azure.com/";
                 break;
             case 'azureusgovernment':
                 resourceManagerEndpointUrl = "https://management.usgovcloudapi.net/";
