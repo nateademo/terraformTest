@@ -116,9 +116,6 @@ function main() {
                         case 'azureusgovernment':
                             resourceManagerEndpointUrl = "https://management.usgovcloudapi.net/";
                             break;
-                        case 'azuregermancloud':
-                            resourceManagerEndpointUrl = "https://management.microsoftazure.de";
-                            break;
                         case 'azurechinacloud':
                             resourceManagerEndpointUrl = "https://management.chinacloudapi.cn/";
                             break;
