@@ -1,4 +1,4 @@
-on: [push]
+# on: [push]
 
 permissions:
       id-token: write
