@@ -19,10 +19,9 @@ jobs:
       - name: 'Az CLI login'
         uses: ./login
         with:
-            client-id: ${{ secrets.AZURE_CLIENT_ID }}
-            tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-            subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-            environment: 'AzureUSGovernment'
+            client-id: ${{ secrets.AZURE_CLIENT_ID_COM }}
+            tenant-id: ${{ secrets.AZURE_TENANT_ID_COM }}
+            subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID_COM }}
 
       - name: 'Run Azure CLI commands'
         run: |
