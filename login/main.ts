@@ -73,8 +73,14 @@ async function main() {
         var resourceManagerEndpointUrl = "https://management.azure.com/";
 
         switch(environment){
+            case 'azurecloud':
+                resourceManagerEndpointUrl = "https://management.usgovcloudapi.net/";
+                break;
             case 'azureusgovernment':
                 resourceManagerEndpointUrl = "https://management.usgovcloudapi.net/";
+                break;
+            case 'azuregermancloud':
+                resourceManagerEndpointUrl = "https://management.microsoftazure.de";
                 break;
             case 'azurechinacloud':
                 resourceManagerEndpointUrl = "https://management.chinacloudapi.cn/";
