@@ -19,4 +19,4 @@ jobs:
         environment: "AzureUSGovernment"
     
     - run: |
-        az group list
+        az group list --debug
